@@ -1,4 +1,6 @@
-def Insert_sort(list):
+# author:betamake
+# chapter:2-insert_sort
+def Insert_sort(list): 
     n = len(list)
     for j in range(1,n):
         key = list[j]
