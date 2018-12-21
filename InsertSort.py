@@ -14,3 +14,4 @@ if __name__ == "__main__":
     print("原列表为：%s" % list)
     Insert_sort(list)
     print("新列表为：%s" % list)
+### 时间复杂度为O（n^2)
