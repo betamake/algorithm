@@ -44,11 +44,11 @@ class SinglyLinkedList:
         while(node is not None) and (pos!=index):
             node  = node.next_node
         return node
-    def insert_to_head(self,value):
-                """在链表的头部插入一个存储value数值的Node节点.
+    def insert_value_to_head(self,value):
+        """在链表的头部插入一个存储value数值的Node节点.
         参数:
             value:将要存储的数据
-        """
+        """      
         node =Node(value)
         node.next_node = self.__head
         self.__head = node
@@ -174,11 +174,11 @@ class SinglyLinkedList:
             print("空")
             return
         while pos.next_node is not None:
-            print(str(pos.data)+"---->",end="")
+            print(pos.data+"---->",end="")
             pos = pos.next_node
-        print(str(pos.data))
+        print(pos.data)
     def __reversed_with_two_node(self,pre,node):
-                """翻转相邻两个节点.
+        """翻转相邻两个节点.
         参数:
             pre:前一个节点
             node:当前节点
@@ -191,14 +191,14 @@ class SinglyLinkedList:
         node = tmp
         return pre,node
     def reversed_self(self):
-         """翻转链表自身."""
+        """翻转链表自身."""
         if self.__head is None or self.__head.next_node is None:
             return
         pre  = self.__head
         node = self.__head.next_node
         while node is not None:
-            pre,node = self.__reversed_with_two_node(pre,node):
-        self.__head.next =None 
+            pre,node = self.__reversed_with_two_node(pre,node)
+        self.__head.next = None 
         self.__head = pre
     def has_ring(self):
         """检查链表中是否有环.
@@ -214,8 +214,9 @@ class SinglyLinkedList:
         while (fast.next_node is not None) and (fast is not None):
             fast = fast.next_node
             slow = slow.next_node
-            if fast ==slow
-            return True
+            if fast ==slow:
+
+                return True
         return False
 def reverse(head):
     reverse_head =None 
@@ -227,8 +228,8 @@ def reverse(head):
     return reverse_head
 def is_palindrome(l):
     l.print_all()
-    slow = l._head
-    fast = l._head
+    slow = l.__head
+    fast = l.__head
     position = 0
     while fast and fast._next:
         slow = slow._next
@@ -236,7 +237,7 @@ def is_palindrome(l):
         position += 1
 
     reverse_node = reverse(slow)
-    head_node = l._head
+    head_node = l.__head
     is_palin = True
     while (head_node and reverse_node):
         if (head_node.data == reverse_node.data):
