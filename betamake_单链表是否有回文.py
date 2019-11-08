@@ -215,7 +215,6 @@ class SinglyLinkedList:
             fast = fast.next_node
             slow = slow.next_node
             if fast ==slow:
-
                 return True
         return False
 def reverse(head):
